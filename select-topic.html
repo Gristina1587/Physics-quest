@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор темы для изучения</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 850px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        h1 {
+            font-size: 1.6em; /* уменьшен размер на 2 */
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Это для вертикального распределения */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 1em;
+            margin-top: 10px;
+            flex-grow: 1; /* Позволяет заголовку занимать все доступное пространство */
+            display: flex;
+            justify-content: center; /* Центрируем текст по вертикали */
+            align-items: center; /* Центрируем текст по горизонтали */
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 18px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Меньший размер кнопки "Вернуться в главное меню" */
+        .button-small {
+            padding: 8px 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="assets/37619-414086244_medium.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <div class="container">
+        <h1>Выберите тему для изучения</h1>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="assets/mechanical_oscillations.jpg" alt="Механические колебания и волны">
+                <h3>Механические колебания и волны</h3>
+            </div>
+            <div class="card">
+                <img src="assets/electromagnetic_oscillations.jpg" alt="Электромагнитные колебания и волны">
+                <h3>Электромагнитные колебания и волны</h3>
+            </div>
+            <div class="card">
+                <img src="assets/optics.jpg" alt="Оптика">
+                <h3>Оптика</h3>
+            </div>
+            <div class="card">
+                <img src="assets/special_relativity.jpg" alt="Основы специальной теории относительности">
+                <h3>Основы специальной теории относительности</h3>
+            </div>
+            <div class="card">
+                <img src="assets/photon_light.jpg" alt="Фотоны. Действия света">
+                <h3>Фотоны. Действия света</h3>
+            </div>
+            <div class="card">
+                <img src="assets/atomic_physics.jpg" alt="Физика атома">
+                <h3>Физика атома</h3>
+            </div>
+            <div class="card">
+                <img src="assets/nuclear_physics.jpg" alt="Ядерная физика и элементарные частицы">
+                <h3>Ядерная физика и элементарные частицы</h3>
+            </div>
+            <div class="card">
+                <img src="assets/unified_model.jpg" alt="Основы единой физической картины мира">
+                <h3>Основы единой физической картины мира</h3>
+            </div>
+        </div>
+
+        <a href="main.html" class="button button-small">Вернуться в главное меню</a>
+    </div>
+
+</body>
+</html>
