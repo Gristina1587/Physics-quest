@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика атома</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 850px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-box h2 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+
+        .info-box ul {
+            padding-left: 16px;
+            font-size: 1.05em;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            width: 180px;
+            padding: 10px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-secondary {
+            background-color: #28a745;
+        }
+
+        .button-secondary:hover {
+            background-color: #1e7e34;
+        }
+
+        .button-small {
+            width: 160px;
+            font-size: 1em;
+            padding: 8px;
+            background-color: #6c757d;
+        }
+
+        .button-small:hover {
+            background-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Физика атома</h1>
+        <p>Перед изучением теории вы можете пройти тест, чтобы оценить свои знания.</p>
+
+        <div class="info-box">
+            <h2>Что такое атом?</h2>
+            <p>Атом — это мельчайшая частица вещества, сохраняющая его химические свойства. Он состоит из ядра (протонов и нейтронов) и облака электронов, вращающихся вокруг ядра.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Основные особенности атома</h2>
+            <ul>
+                <li><strong>Электроны</strong>: Обладают отрицательным зарядом и вращаются вокруг ядра на различных орбитах.</li>
+                <li><strong>Протоны</strong>: Имеют положительный заряд, расположены в ядре атома.</li>
+                <li><strong>Нейтроны</strong>: Не имеют заряда, также находятся в ядре атома.</li>
+                <li><strong>Масса атома</strong>: Основную массу атома составляют протоны и нейтроны, так как электроны имеют очень маленькую массу.</li>
+            </ul>
+        </div>
+
+        <div class="button-container">
+            <a href="atomic_physics_test.html" class="button">Пройти тест</a>
+            <a href="atomic_physics_theory.html" class="button button-secondary">Перейти к теории</a>
+            <a href="select-topic.html" class="button button-small">Выбор тем</a>
+        </div>
+    </div>
+
+</body>
+</html>

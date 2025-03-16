@@ -65,7 +65,7 @@
             width: 160px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Это для вертикального распределения */
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -82,10 +82,10 @@
         .card h3 {
             font-size: 1em;
             margin-top: 10px;
-            flex-grow: 1; /* Позволяет заголовку занимать все доступное пространство */
+            flex-grow: 1;
             display: flex;
-            justify-content: center; /* Центрируем текст по вертикали */
-            align-items: center; /* Центрируем текст по горизонтали */
+            justify-content: center;
+            align-items: center;
         }
 
         .button {
@@ -106,7 +106,6 @@
             background-color: #0056b3;
         }
 
-        /* Меньший размер кнопки "Вернуться в главное меню" */
         .button-small {
             padding: 8px 15px;
             font-size: 0.9em;
@@ -124,35 +123,35 @@
         <h1>Выберите тему для изучения</h1>
 
         <div class="card-container">
-            <div class="card">
+            <div class="card" onclick="window.location.href='mechanical_oscillations_intro.html'">
                 <img src="assets/mechanical_oscillations.jpg" alt="Механические колебания и волны">
                 <h3>Механические колебания и волны</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='electromagnetic_oscillations_intro.html'">
                 <img src="assets/electromagnetic_oscillations.jpg" alt="Электромагнитные колебания и волны">
                 <h3>Электромагнитные колебания и волны</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='optics_intro.html'">
                 <img src="assets/optics.jpg" alt="Оптика">
                 <h3>Оптика</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='special_relativity_intro.html'">
                 <img src="assets/special_relativity.jpg" alt="Основы специальной теории относительности">
                 <h3>Основы специальной теории относительности</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='photon_light_intro.html'">
                 <img src="assets/photon_light.jpg" alt="Фотоны. Действия света">
                 <h3>Фотоны. Действия света</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='atomic_physics_intro.html'">
                 <img src="assets/atomic_physics.jpg" alt="Физика атома">
                 <h3>Физика атома</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='nuclear_physics_intro.html'">
                 <img src="assets/nuclear_physics.jpg" alt="Ядерная физика и элементарные частицы">
                 <h3>Ядерная физика и элементарные частицы</h3>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.location.href='unified_model_intro.html'">
                 <img src="assets/unified_model.jpg" alt="Основы единой физической картины мира">
                 <h3>Основы единой физической картины мира</h3>
             </div>

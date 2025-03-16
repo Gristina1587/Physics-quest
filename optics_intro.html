@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оптика</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            transform: scale(0.92);
+            transform-origin: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 18px;
+            border-radius: 12px;
+            width: 75%;
+            max-width: 700px;
+            font-size: 1.1em;
+        }
+
+        h1 {
+            font-size: 1.7em;
+            margin-bottom: 14px;
+        }
+
+        p {
+            font-size: 1.05em;
+            margin-bottom: 9px;
+        }
+
+        .info-box {
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-box h2 {
+            font-size: 1.3em;
+            margin-bottom: 7px;
+            color: #4CAF50;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            width: 180px;
+            padding: 10px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-secondary {
+            background-color: #28a745; /* Зелёный цвет для кнопки "Перейти к теории" */
+        }
+
+        .button-secondary:hover {
+            background-color: #1e7e34;
+        }
+
+        .button-small {
+            width: 160px;
+            font-size: 1em;
+            padding: 8px;
+            background-color: #6c757d;
+        }
+
+        .button-small:hover {
+            background-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Оптика</h1>
+        <p>Перед изучением теории вы можете пройти тест, чтобы оценить свои знания.</p>
+
+        <div class="info-box">
+            <h2>Что такое оптика?</h2>
+            <p>Оптика — это раздел физики, изучающий законы отражения и преломления света, а также его взаимодействие с различными веществами.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Основные явления в оптике</h2>
+            <ul>
+                <li><strong>Отражение</strong>: изменение направления света при его попадании на поверхность.</li>
+                <li><strong>Преломление</strong>: изменение направления света при переходе через границу двух сред.</li>
+                <li><strong>Дифракция</strong>: отклонение света при прохождении через препятствия или отверстия.</li>
+                <li><strong>Интерференция</strong>: взаимодействие световых волн, приводящее к усилению или ослаблению света.</li>
+            </ul>
+        </div>
+
+        <div class="button-container">
+            <a href="optics_test.html" class="button">Пройти тест</a>
+            <a href="optics_theory.html" class="button button-secondary">Перейти к теории</a>
+            <a href="select-topic.html" class="button button-small">Выбор тем</a>
+        </div>
+    </div>
+
+</body>
+</html>
