@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главное меню</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .detective-button {
+            background-color: #6a0dad;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px rgba(138, 43, 226, 0.7);
+        }
+
+        .detective-button:hover {
+            background-color: #5c0cad;
+        }
+
+        .button[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .question-mark {
+            font-size: 2.5em;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .fullscreen-info {
+            position: fixed;
+            bottom: 40px;
+            right: 70px;
+            font-size: 1em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .question-mark:hover + .fullscreen-info {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <video class="background-video" autoplay loop muted>
+        <source src="assets/37619-414086244_medium.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <div class="container">
+        <p>На нашем сайте вы можете выбрать одну из 8 доступных тем, пройти вводный тест для оценки знаний, а затем пройти урок по выбранной теме. После этого вы сможете пройти тест снова и увидеть улучшение своих результатов.</p>
+        <p>Тесты обновляются, что позволяет вам совершенствовать знания с каждым прохождением. Вы можете отслеживать свой прогресс и соревноваться с другими участниками на платформе.</p>
+        <p>Также у нас есть увлекательная игра "Физический детектив", где вам предстоит решать физические задачи и разгадывать тайны. За успехи в игре вы можете попасть в рейтинг участников!</p>
+        <p>Для того чтобы попасть в рейтинг, нужно активно участвовать в игре "Детектив". Чем больше вы решаете задач, тем выше ваши шансы занять высокие места в списке!</p>
+        <div class="buttons-container">
+            <a href="rating.html" class="button" title="Посмотрите рейтинг участников и узнайте, кто на первых местах!">Рейтинг участников</a>
+            <a href="select-topic.html" class="button" title="Выберите одну из 8 доступных тем для обучения!">Приступить к выбору темы</a>
+            <a href="feedback.html" class="button" title="Оставьте свой отзыв о платформе и улучшайте наш сервис!">Оставить отзыв</a>
+            <a href="GameHome.html" class="button detective-button" title="Пройдите увлекательный квест 'Физический детектив', где вам предстоит решать задачи по физике!">Квест "Физический детектив"</a>
+        </div>
+    </div>
+
+    <div class="question-mark">?</div>
+    <div class="fullscreen-info">Для перехода или выхода из полноэкранного режима используйте F11</div>
+</body>
+</html>
