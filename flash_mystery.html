@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Квест - Таинственная вспышка</title>
+    <title>Квест - Исчезновение экспериментального образца</title>
     <style>
         body {
             margin: 0;
@@ -25,7 +25,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            object-fit: cover;
+            object-fit: cover; /* Видео растягивается на весь экран */
             display: none; /* Изначально скрыто */
         }
 
@@ -82,6 +82,7 @@
             opacity: 0;
         }
 
+        /* Стили для ползунка громкости */
         .volume-control {
             position: absolute;
             bottom: 30px;
@@ -107,64 +108,32 @@
             color: white;
         }
 
-        /* Стиль для знака вопроса */
-        .question-mark {
-            font-size: 2.5em;
-            cursor: pointer;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 10;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        /* Стиль для подсказки */
-        .fullscreen-info {
-            position: fixed;
-            bottom: 40px; /* Немного выше, чтобы мышка не перекрывала */
-            right: 70px; /* Немного дальше от знака вопроса */
-            font-size: 1em;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 8px;
-            border-radius: 5px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        /* Появление подсказки при наведении на знак вопроса */
-        .question-mark:hover + .fullscreen-info {
-            opacity: 1;
-            visibility: visible;
-        }
     </style>
 </head>
 <body>
 
+    <!-- Текст с подсказкой для наушников -->
     <div class="intro-text" id="introText">
         Для погружения используйте наушники
     </div>
 
+    <!-- Видео без autoplay -->
     <video id="video">
-        <source src="assets/1_treiler_suzhet.webm" type="video/webm">
+        <source src="assets/2_treiler_suzhet.webm" type="video/webm">
         Ваш браузер не поддерживает тег video.
     </video>
 
+    <!-- Кнопка "Заступить на смену" -->
     <button class="start-button" id="startButton" onclick="startVideo()">Заступить на смену</button>
 
+    <!-- Кнопка пропустить видео -->
     <button class="skip-button" id="skipButton" onclick="skipVideo()">Пропустить</button>
 
+    <!-- Ползунок регулировки громкости -->
     <div class="volume-control" id="volumeControl">
         <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="updateVolume()">
         <div class="volume-percentage" id="volumePercentage">100%</div>
     </div>
-
-    <!-- Знак вопроса и подсказка -->
-    <div class="question-mark" id="questionMark">?</div>
-    <div class="fullscreen-info">Для перехода или выхода из полноэкранного режима используйте F11</div>
 
     <script>
         const video = document.getElementById('video');
@@ -174,20 +143,15 @@
         const volumeSlider = document.getElementById('volumeSlider');
         const volumePercentage = document.getElementById('volumePercentage');
         const volumeControl = document.getElementById('volumeControl');
-        const questionMark = document.getElementById('questionMark');
         let isMuted = false;  // Сразу включен звук
         let hideVolumeControlTimeout;
 
-        // Получаем выбранную страницу из localStorage
-        window.onload = function() {
-            const selectedPage = localStorage.getItem("selectedPage");
+        // Показать кнопку пропуска после 2 секунд
+        setTimeout(function() {
+            skipButton.style.display = 'block';
+        }, 2000);
 
-            // Если это нужная страница, то видео не должно быть видно
-            if (selectedPage !== "flash_mystery.html") {
-                video.style.display = 'none';
-            }
-        }
-
+        // Начать видео при клике на кнопку
         function startVideo() {
             video.style.display = 'block';  // Показываем видео
             video.play();  // Запускаем видео
@@ -196,27 +160,29 @@
             skipButton.style.display = 'block';  // Показать кнопку пропуска
         }
 
+        // Пропустить видео
         function skipVideo() {
             window.location.href = "game.html"; // Перейти на страницу с тестом
         }
 
+        // Функция для обновления громкости по мере движения ползунка
         function updateVolume() {
             video.volume = volumeSlider.value;  // Устанавливаем громкость видео
             volumePercentage.textContent = Math.round(video.volume * 100) + '%';  // Отображаем процент
             resetHideTimeout();  // Обновляем таймер для скрытия ползунка
         }
 
+        // При наведении на экран показываем ползунок
         video.addEventListener("mousemove", function() {
             volumeControl.style.visibility = "visible"; // Показываем ползунок
-            questionMark.style.visibility = "visible"; // Показываем знак вопроса
             resetHideTimeout();  // Сбрасываем таймер для скрытия
         });
 
+        // При отсутствии движения мыши в течение 1.5 секунд скрываем ползунок
         function resetHideTimeout() {
             clearTimeout(hideVolumeControlTimeout); // Очистить предыдущий таймер
             hideVolumeControlTimeout = setTimeout(function() {
                 volumeControl.style.visibility = "hidden"; // Скрываем ползунок
-                questionMark.style.visibility = "hidden"; // Скрываем знак вопроса
             }, 1500); // 1.5 секунды без движения мыши
         }
     </script>
