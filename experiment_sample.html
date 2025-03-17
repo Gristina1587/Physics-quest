@@ -107,7 +107,6 @@
             font-size: 1em;
             color: white;
         }
-
     </style>
 </head>
 <body>
@@ -160,10 +159,15 @@
             skipButton.style.display = 'block';  // Показать кнопку пропуска
         }
 
-        // Пропустить видео
+        // Пропустить видео и перейти на test.html
         function skipVideo() {
-            window.location.href = "game.html"; // Перейти на страницу с тестом
+            window.location.href = "test.html"; // Перейти на страницу с тестом
         }
+
+        // Перенаправление на test.html после завершения видео
+        video.addEventListener("ended", function() {
+            window.location.href = "test.html"; // Перейти на страницу с тестом
+        });
 
         // Функция для обновления громкости по мере движения ползунка
         function updateVolume() {
