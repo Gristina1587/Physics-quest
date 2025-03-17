@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
             color: white;
             display: flex;
             justify-content: center;
@@ -17,17 +16,29 @@
             height: 100vh;
             position: relative;
             text-align: center;
+            overflow: hidden;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         .container {
-            width: 80%;
-            max-width: 850px;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 18px;
             border-radius: 10px;
+            width: 80%;
+            max-width: 850px;
             text-align: center;
             overflow-y: auto;
             max-height: 80vh;
+            z-index: 1;
         }
 
         h1 {
@@ -103,6 +114,11 @@
 </head>
 <body>
 
+    <video class="background-video" autoplay loop muted>
+        <source src="assets/3129595-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
     <div class="container">
         <h1>Фотоны. Действия света</h1>
         <p>Перед изучением теории вы можете пройти вступительный тест, чтобы оценить свои знания.</p>
@@ -122,7 +138,6 @@
         </div>
 
         <div class="button-container">
-            <!-- Обновленная кнопка с новым текстом -->
             <a href="https://docs.google.com/forms/d/1M2fTvMbnpM8OCVEf4vHvHKnI8kukogCrk2eFTRY4qTs/edit" class="button" target="_blank">Вступительный тест</a>
             <a href="photon_light_theory.html" class="button button-secondary">Перейти к теории</a>
             <a href="select-topic.html" class="button button-small">Выбор тем</a>

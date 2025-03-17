@@ -9,15 +9,24 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative;
             text-align: center;
-            transform: scale(0.92);
-            transform-origin: center;
+            overflow: hidden;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         .container {
@@ -27,6 +36,7 @@
             width: 75%;
             max-width: 700px;
             font-size: 1.1em;
+            z-index: 1;
         }
 
         h1 {
@@ -81,7 +91,7 @@
         }
 
         .button-secondary {
-            background-color: #28a745; /* Зелёный цвет для кнопки "Перейти к теории" */
+            background-color: #28a745; /* Зеленый цвет для кнопки "Перейти к теории" */
         }
 
         .button-secondary:hover {
@@ -101,6 +111,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Background Video -->
+    <video class="background-video" autoplay loop muted>
+        <source src="assets/3129595-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
 
     <div class="container">
         <h1>Оптика</h1>
@@ -122,8 +138,7 @@
         </div>
 
         <div class="button-container">
-            <!-- Обновленная кнопка с новым текстом -->
-            <a href="https://docs.google.com/forms/d/1wMSWysEuordZgNHvD0T68RABpQ0bN28TWyXVhh3yOsU/edit" class="button" target="_blank">Вступительный тест</a> <!-- Перенаправление на Google Форму -->
+            <a href="https://docs.google.com/forms/d/1wMSWysEuordZgNHvD0T68RABpQ0bN28TWyXVhh3yOsU/edit" class="button" target="_blank">Вступительный тест</a>
             <a href="optics_theory.html" class="button button-secondary">Перейти к теории</a>
             <a href="select-topic.html" class="button button-small">Выбор тем</a>
         </div>

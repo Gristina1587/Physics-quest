@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
             color: white;
             display: flex;
             justify-content: center;
@@ -17,6 +16,17 @@
             height: 100vh;
             position: relative;
             text-align: center;
+            overflow: hidden;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         .container {
@@ -102,6 +112,11 @@
     </style>
 </head>
 <body>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="assets/3129595-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
 
     <div class="container">
         <h1>Основы единой физической картины мира</h1>

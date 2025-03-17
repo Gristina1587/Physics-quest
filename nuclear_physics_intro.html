@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
             color: white;
             display: flex;
             justify-content: center;
@@ -17,17 +16,27 @@
             height: 100vh;
             position: relative;
             text-align: center;
+            overflow: hidden;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         .container {
-            width: 80%;
-            max-width: 850px;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 18px;
-            border-radius: 10px;
-            text-align: center;
-            overflow-y: auto;
-            max-height: 80vh;
+            border-radius: 12px;
+            width: 75%;
+            max-width: 850px;
+            font-size: 1.1em;
+            z-index: 1;
         }
 
         h1 {
@@ -103,6 +112,12 @@
 </head>
 <body>
 
+    <!-- Background Video -->
+    <video class="background-video" autoplay loop muted>
+        <source src="assets/3129595-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
     <div class="container">
         <h1>Ядерная физика и элементарные частицы</h1>
         <p>Перед изучением теории вы можете пройти вступительный тест, чтобы оценить свои знания.</p>
@@ -123,7 +138,6 @@
         </div>
 
         <div class="button-container">
-            <!-- Обновленная кнопка с новым текстом -->
             <a href="https://docs.google.com/forms/d/1DO-UhzL6xZU39ssFjH-Z-OmIwL9YJbSQAG3-uea2q_k/edit" class="button" target="_blank">Вступительный тест</a>
             <a href="nuclear_physics_and_particles_theory.html" class="button button-secondary">Перейти к теории</a>
             <a href="select-topic.html" class="button button-small">Выбор тем</a>
