@@ -101,13 +101,45 @@
             z-index: 10;
         }
 
+        /* Стиль для знака вопроса */
         .question-mark {
             font-size: 2.5em;
             cursor: pointer;
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            right: 80px; /* Сдвигаем правее, чтобы оставить место для иконки человечка */
             z-index: 10;
+        }
+
+        /* Стиль для иконки человечка */
+        .author-icon {
+            font-size: 2.5em;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Иконка человечка расположена рядом с вопросительным знаком */
+            z-index: 10;
+        }
+
+        /* Стиль для подсказки с информацией об авторах */
+        .author-info {
+            position: fixed;
+            bottom: 40px;
+            right: 70px;
+            font-size: 1em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Появление подсказки с авторами при наведении */
+        .author-icon:hover + .author-info {
+            opacity: 1;
+            visibility: visible;
         }
 
         .fullscreen-info {
@@ -149,7 +181,12 @@
         </div>
     </div>
 
+    <!-- Знак вопроса и подсказка -->
     <div class="question-mark">?</div>
     <div class="fullscreen-info">Для перехода или выхода из полноэкранного режима используйте F11</div>
+
+    <!-- Иконка человечка и подсказка с авторами -->
+    <div class="author-icon">👤</div>
+    <div class="author-info">Авторы: Дана Али, 11 класс</div>
 </body>
 </html>
